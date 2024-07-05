@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      function first(){
+        //local scope first
+        let firstVariable = "Pertama";
+        console.info(firstVariable);
+        function firstNested(){
+          document.writeln(`<p> ${firstVariable} </p>`);
+        }
+        firstNested();
+      }
+      
+      first();
+      
+    </script>
+  </body>
+</html>
