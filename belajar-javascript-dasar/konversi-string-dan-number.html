@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konversi String dan Number</title>
+</head>
+<body>
+<script>
+
+    const value1 = "1";
+    const value2 = 1;
+    const sum = parseInt(value1) + value2;
+    
+    document.writeln(`<p> ${sum} </p>`);
+    
+    document.writeln(`<p> ${parseInt("1.1")} </p>`);
+    document.writeln(`<p> ${parseFloat("1.1")} </p>`);
+    document.writeln(`<p> ${Number("1.1")} </p>`);
+    
+    const a = 1;
+    const b = 1;
+    const total = a.toString() + b.toString();
+    document.writeln(`<p> ${total} </p>`);
+    
+    document.writeln(`<p> ${parseInt("1salah")} </p>`);
+    document.writeln(`<p> ${parseFloat("1.1salah")} </p>`);
+    document.writeln(`<p> ${Number("1.1salah")} </p>`);
+    
+    const first = Number("salah"); //NaN
+    const totalNumber = 100 + first;
+    document.writeln(`<p> ${totalNumber} </p>`);
+    
+    document.writeln(`<p> ${isNaN(first)} </p>`);
+    document.writeln(`<p> ${isNaN(sum)} </p>`);
+    document.writeln(`<p> ${isNaN(NaN)} </p>`);
+    
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Kunci This</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      console.info(this);
+      
+      function sample(){
+        console.info(window);
+        function inner(){
+          console.info(window);
+        }
+      }
+      
+      sample();
+      
+      const person = {
+        name : "Ryan",
+        sayHello : function (value){
+          console.info(`Hello ${value} nama saya ${this.name}`);
+        }
+      }
+      
+      person.sayHello("Wahyu");
+      person.sayHello("Wayay");
+      
+    </script>
+  </body>
+</html>

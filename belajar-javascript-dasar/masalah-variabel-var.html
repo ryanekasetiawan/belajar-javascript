@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masalah Variabel var</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+     
+      //global
+      var i = 20;
+      
+      for(var i =0; i < 10; i++){
+        console.info(`lokal ${i}`);
+      }
+      
+      console.info(`global ${i}`);
+      
+      //global
+      let j = 20;
+      
+      for(let j =0; j < 10; j++){
+        console.info(`lokal ${j}`);
+      }
+      
+      console.info(`global ${j}`);
+    </script>
+  </body>
+</html>
