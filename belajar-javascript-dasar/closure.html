@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      function createAdder(value){
+        const owner = "Ryan"
+        
+        function add(param){
+          console.info(owner);
+          return value + param;
+        }
+        return add;
+      }
+      
+      const addTwo = createAdder(2);
+      //function addTwo(param){
+        //console.info("Ryan");
+        //return 2 + param;
+      //}
+      
+      console.info(addTwo(10));
+      console.info(addTwo(20));
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      //dengan block
+      //const sayHello = (name) => {
+        //const say = `Hello ${name}`;
+        //console.info(say);
+      //}
+      
+      //tanpa block
+      //const sayHello = (name) => console.info(`Hello ${name}`);
+      
+      //tanpa block dan 1 parameter
+      const sayHello = name => console.info(`Hello ${name}`);
+      
+      sayHello("Ryan");
+      
+      
+      //const sum = (first, second) => { return first + second;
+      //}
+      
+      const sum = (first, second) => first + second; 
+      
+      console.info(sum(10,10));
+      
+      function giveMeName(callback){
+        callback("Ryan");
+      }
+      
+      //anonymous function
+      //giveMeName(function (name){
+        //console.info(`Hello ${name}`);
+      //})
+      
+      //arrow funcntion
+      giveMeName(name => console.info(`Hello ${name}`));
+      
+    </script>
+  </body>
+</html>
