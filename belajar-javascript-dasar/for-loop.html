@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Loop</title>
+</head>
+<body>
+<script>
+
+    /*
+    for(let counter= 1; counter <= 10; counter++){
+        document.writeln(`<p> perulangan ke ${counter} </p>`);
+    }
+    */
+
+    let x = ``;
+    for(let a = 1; a <= 10; a++){
+        for(let b = 1; b <= a; b++){
+            document.writeln(`*`);
+            x += `*`;
+        }
+        x += `\n`;
+        document.writeln("<br/>"); 
+    }
+    
+    document.writeln(`<p> </p>`);
+    
+    let y = ``;
+    for(let a = 10; a > 0; a--){
+        for(let b = 0; b < a; b++){
+            document.writeln("*");
+            y += `*`;
+        }
+        document.writeln("<br/>"); 
+        y += `\n`;
+    }
+    
+    document.writeln(`<p> </p>`);
+    
+    let z = ``;
+
+    for(let a = 0; a < 10; a++){
+        for(let c = 0; c < a; c++){
+            z += ` `;
+           document.writeln("&nbsp");
+        }
+        for(let b = 10; b > a; b--){
+            z += `*`;
+            document.writeln("*");
+        }
+        z += `\n`;
+        document.writeln("<br/>");
+    }
+    console.info(x,y,z);
+    
+    /*
+    for(let i = 0; i <= 10; i++){
+        document.writeln(`*`);
+        for(let x = 1; x <= i; x++){
+            document.writeln(`&nbsp`);
+        }
+        document.writeln(`*`);
+        document.writeln(`<br/>`); 
+    }
+        
+    document.writeln(`<p> </p>`);
+    
+    for(let i = 0; i <= 10; i++){
+        document.writeln(`*`);
+        for(let x = 1; x <= i; x++){
+            document.writeln(`&nbsp`);
+        }
+        document.writeln(`*`);
+        document.writeln(`<br/>`); 
+    }
+    */
+    
+</script>
+</body>
+</html>

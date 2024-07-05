@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Falsy dan Truthy di Non Boolean</title>
+</head>
+<body>
+<script>
+
+    console.info("Hello" || "");
+    console.info("" || []);
+    console.info("0" || "Nol");
+    console.info(0 || "Nol");
+    console.info(null || "Null");
+    console.info(undefined || "Undefined");
+    console.info(0 || false);
+    console.info("0"  || true);
+    
+    const person = {
+        firstName : "Ryan",
+        lastName : "Eka"
+    }
+    
+    const name = person.firstName || person.lastName;
+    document.writeln(name);
+    
+    console.info("Hello" && "");
+    console.info("" && []);
+    console.info("0" && "Nol");
+    console.info(0 && "Nol");
+    console.info(null && "Null");
+    console.info(undefined && "Undefined");
+    console.info(0 && false);
+    console.info("0"  && true);
+    
+</script>
+</body>
+</html>
