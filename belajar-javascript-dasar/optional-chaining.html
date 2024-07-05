@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Optional Chaining</title>
+</head>
+<body>
+<script>
+
+    const person = {
+        address : {
+            country : "Jakarta"
+        }
+    };
+    
+    let country = person?.address?.country;
+    
+    //tanpa optional chaining
+    //let country = person.address.country;
+    //if(person.address !== undefined || person.address !== null){
+        //country = person.address.country;
+    //}
+    
+    document.writeln(`<p> ${country} </p>`);
+    
+</script>
+</body>
+</html>

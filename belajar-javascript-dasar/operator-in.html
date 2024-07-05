@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operator in</title>
+</head>
+<body>
+<script>
+
+    const person = {
+        firstName : "Ryan",
+        lastName : "Eka",
+    };
+    
+    if ("firstName" in person){
+        document.writeln(`<p> Hello ${person.firstName} </p>`);
+    }else {
+        document.writeln(`<p> Hello </p>`);
+    }
+    
+    const nama = {
+        firstName : "Ryan",
+        middleName : undefined,
+        lastName : "Setiawan"
+    }
+    
+    if ("middleName" in nama){
+        document.writeln(`<p> Hello ${nama.middleName} </p>`);
+    }else {
+        document.writeln(`<p> null/undefined </p>`);
+    }
+    
+    const student = {
+        firstName : "Ryan",
+        middleName : undefined,
+        lastName : "Setiawan"
+    }
+    
+    if ("middleName" in student && student.middleName !== undefined && student.middleName !== null){
+        document.writeln(`<p> Student ${student.middleName} </p>`);
+    }else {
+        document.writeln(`<p> null/undefined </p>`);
+    }
+    
+    const name = ["Ryan", "Eka", null];
+    const nameResult = 2 in name;
+    
+    if (nameResult){
+        document.writeln(`<p> Hello ${nameResult} </p>`);
+    }else {
+        document.writeln(`<p> Hello </p>`);
+    }
+    
+</script>
+</body>
+</html>
