@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter dan Setter</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      const person = {
+        firstName : "Ryan",
+        lastName : "Setiawan",
+        get fullName(){
+          return (`Nama Saya  ${this.firstName} ${this.lastName}`);
+        },
+        set fullName(value){
+          const array = value.split(" ");
+          this.firstName = array[0];
+          this.lastName = array[1];
+        }
+      };
+      
+      person.fullName = "Wahyu Nurhanif";
+      console.table(person);
+      
+      person.fullName = "Budi Santoso";
+      console.table(person);
+      
+      person.fullName = "Ryan Setiawan";
+      console.table(person);
+      
+    </script>
+  </body>
+</html>

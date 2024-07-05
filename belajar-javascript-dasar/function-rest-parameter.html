@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function rest parameter</title>
+  </head>
+  <body>
+    
+  <script type="text/javascript" charset="utf-8">
+    function sum(name, ...data){
+      let total = 0;
+      for(const item of data){
+        total += item;
+      }
+      document.writeln(`<p> Total ${name} is ${data} </p>`);
+    }
+    
+    sum("Orange", 10,20,30,40,50,60);
+    sum("Apple", 10,20,30,40,50,60);
+    sum("Mango", 10,20,30,40,50,60);
+  </script>
+  </body>
+</html>

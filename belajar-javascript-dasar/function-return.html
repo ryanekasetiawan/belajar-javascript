@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return</title>
+    
+  </head>
+  <body>
+  <script type="text/javascript" charset="utf-8">
+  
+    function sayHello(firstName, lastName){
+      const say = `Hello ${firstName} ${lastName}`;
+      return say;
+    }
+
+    const result = sayHello("Ryan","Eka");
+    document.writeln(`<p> ${result} </p>`);
+    
+    function getNilai(nilai){
+      if(nilai > 90){
+        return "A";
+      }
+      else if(nilai > 80){
+        return "B";
+      }
+      else if(nilai > 70){
+        return "C";
+      }
+      else {
+        return "D";
+      }
+    }
+    
+    const input = getNilai(40);
+    document.writeln(`<p> ${input} </p>`);
+    
+    function isContain(array, setValue){
+      for(const element of array){
+        console.info(`Iterasi Element ${element}`);
+        if(element === setValue){
+          return true;
+        }
+      }
+      return false;
+    }
+    
+    const array = [3, 26, 48, 83, 62, 251, 737, 73];
+    const search = 83;
+    const found = isContain(array, search);
+    document.writeln(`<p> ${found} </p>`);
+  </script>
+  </body>
+</html>
