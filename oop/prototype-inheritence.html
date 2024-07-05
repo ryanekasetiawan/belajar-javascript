@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype inheritance</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      function Employee(name){
+        this.name = name;
+      }
+      
+      function Manager(name){
+        this.name = name;
+      }
+      
+      //Manager.prototype = Employee.prototype //salah
+      
+      Manager.prototype = Object.create(Employee.prototype);
+      
+      Manager.prototype.sayHello = function (name){
+        console.info(`Hello ${name}, My Name is Manager ${this.name}`);
+      }
+      
+      Employee.prototype.sayHello = function (name){
+        console.info(`Hello ${name}, My Name is Employee ${this.name}`);
+      }
+      
+      const employee = new Employee ("Wahyu");
+      employee.sayHello("Budi");
+      
+      const manager = new Manager ("Ryan");
+      manager.sayHello("Budi");
+      
+    </script>
+  </body>
+</html>

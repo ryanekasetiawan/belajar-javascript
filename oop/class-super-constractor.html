@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Super Constractor</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      class Employee {
+        
+        constructor(firstName) {
+          this.firstName = firstName;
+        }
+        
+        sayHello(name){
+          console.info(`Hello ${name}, My employee is ${this.firstName}`);
+        }
+      }
+      
+      class Manager extends Employee {
+        
+        constructor(firstName, lastName){
+          super(firstName);
+          this.lastName = lastName;
+        }
+        
+        sayHello(name){
+          console.info(`Hello ${name}, My manager is ${this.firstName} ${this.lastName}`);
+        }
+      }
+      
+      const ryan = new Employee("Ryan");
+      ryan.sayHello("Bambang");
+      
+      const wahyu = new Manager("Wahyu", "Nurhanif");
+      wahyu.sayHello("Bambang");
+      
+      console.info(ryan);
+      console.info(wahyu);
+      
+    </script>
+  </body>
+</html>
