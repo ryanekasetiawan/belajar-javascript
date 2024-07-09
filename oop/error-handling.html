@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      class MathUtil {
+        
+        static sum(...numbers) {
+          if(numbers.length === 0) {
+            throw new Error("Total parameter harus lebih dari 0");
+          }
+          
+          let total = 0;
+          for(const number of numbers){
+            total += number;
+          }
+          return total;
+        }
+      }
+      try {
+        console.info(MathUtil.sum());
+        console.info("ryan");
+      } catch(error) {
+        console.info(`terjadi error : ${error.message}`);
+      } finally {
+        console.info("Program selesai");
+      }
+      
+      class Counter {
+        #counter = 1;
+        
+        next() {
+          try {
+            return this.#counter;
+          } finally {
+            this.#counter++;
+          }
+        }
+      }
+      
+      const counter = new Counter();
+      console.info(counter.next());
+      console.info(counter.next());
+      console.info(counter.next());
+      console.info(counter.next());
+      console.info(counter.next());
+      
+    </script>
+  </body>
+</html>
