@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Method</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      class MathUtil {
+        
+        static sum(...numbers) {
+          let total = 0;
+          for(const number of numbers){
+            total += number;
+          }
+          return total;
+        }
+      }
+      
+      const result = MathUtil.sum(1,1,1,1,1)
+      console.info(result);
+      
+    </script>
+  </body>
+</html>
