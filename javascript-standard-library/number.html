@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      const input = "12345";
+      const number = Number(input);
+      
+      console.info(typeof number);
+      console.info(typeof input);
+      console.info(number);
+      
+      console.info(Number("salah"));
+      
+      console.info(Number.MIN_VALUE);
+      console.info(Number.MAX_VALUE);
+      console.info(Number.MIN_SAFE_INTEGER);
+      console.info(Number.MAX_SAFE_INTEGER);
+      
+      const data = Number("12345");
+      console.info(Number.isInteger(data));
+      console.info(Number.isNaN(data));
+      
+      const value = Number(12345);
+      console.info(value.toString(2));
+      console.info(value.toLocaleString("id-ID"));
+      console.info(value.toLocaleString("en-US"));
+    </script>
+  </body>
+</html>
