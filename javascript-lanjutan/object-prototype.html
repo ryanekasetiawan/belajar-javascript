@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Prototype dan Class</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+    
+      /*
+      function Mahasiswa(nama,energi) {
+        this.nama = nama;
+        this.energi = energi;
+      }
+      
+      Mahasiswa.prototype.makan = function(porsi) {
+          this.energi += porsi;
+          return `Halo ${this.nama} selamat makan`;
+        };
+      Mahasiswa.prototype.tidur = function(jam) {
+          this.energi += jam  * 2;
+          return `Halo ${this.nama} selamat tidur`;
+        };
+      Mahasiswa.prototype.main = function(jam) {
+          this.energi -= jam;
+          return `Halo ${this.nama} selamat main`;
+        };*/
+      
+      //let ryan = new Mahasiswa("ryan", 10);
+      //let wahyu = new Mahasiswa("wahyu", 20);
+      
+      //versi Class
+      class Mahasiswa {
+        constructor(nama, energi){
+          this.nama = nama;
+          this.energi = energi;
+        }
+        
+        makan(porsi) {
+          this.energi += porsi;
+          return `Halo ${this.nama} selamat makan`;
+        }
+        tidur(jam) {
+          this.energi += jam  * 2;
+          return `Halo ${this.nama} selamat tidur`;
+        }
+        main(jam) {
+          this.energi -= jam;
+          return `Halo ${this.nama} selamat main`;
+        }
+      }
+      
+      let ryan = new Mahasiswa("ryan", 10);
+      let wahyu = new Mahasiswa("wahyu", 20);
+    </script>
+  </body>
+</html>

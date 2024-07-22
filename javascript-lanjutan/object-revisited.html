@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Revisited</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+  
+      //cara membuat objek
+      //1. object literal
+      let mahasiswa = {
+        nama: "Ryan",
+        energi: 10,
+        makan: function(porsi) {
+          this.energi += porsi;
+          console.log(`Halo ${this.nama} Selamat makan`);
+        }
+      };
+      
+      //2. function declaration
+      /*function Mahasiswa(nama,energi) {
+        let mahasiswa = {};
+        mahasiswa.nama = nama;
+        mahasiswa.energi = energi;
+        
+        mahasiswa.makan = function(porsi) {
+          this.energi += porsi;
+          console.log(`Halo ${this.nama} selamat makan`);
+        };
+        
+        mahasiswa.main = function(jam) {
+          this.energi -= jam;
+          console.log(`Halo ${this.nama} selamat main`);
+        }
+        return mahasiswa;
+      }*/
+      
+      //let ryan = Mahasiswa("ryan", 10);
+      //let wahyu = Mahasiswa("wahyu", 20);
+      
+      //3. constructor function
+      //keyword new
+      function Mahasiswa(nama,energi) {
+        this.nama = nama;
+        this.energi = energi;
+        
+        this.makan = function(porsi) {
+          this.energi += porsi;
+          console.log(`Halo ${this.nama} selamat makan`);
+        };
+        
+        this.main = function(jam) {
+          this.energi -= jam;
+          console.log(`Halo ${this.nama} selamat main`);
+        };
+      }
+      
+      let ryan = new Mahasiswa("ryan", 10);
+    </script>
+  </body>
+</html>
