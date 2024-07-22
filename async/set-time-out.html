@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      function addElement () {
+        const header = document.createElement("h1");
+        header.textContent = "Belajar Javascript Asynchronus";
+        
+        document.body.appendChild(header);
+      }
+      
+      setTimeout(addElement, 3000);
+    </script>
+  </body>
+</html>
