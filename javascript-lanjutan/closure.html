@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      /*function init(){
+        return function tampilNama(nama) {
+          console.log(nama);
+        }
+      }
+      
+      let panggilNama = init();
+      panggilNama("Ryan");*/
+      
+      
+      /*function ucapkanSalam(waktu) {
+        return function(nama) {
+          console.log(`Hello ${nama}, selamat ${waktu}, semoga harimu menyenangkan`);
+        }
+      }
+      
+      let selamatPagi = ucapkanSalam("pagi");
+      let selamatSiang = ucapkanSalam("siang");
+      let selamatMalam = ucapkanSalam("malam");
+      
+      selamatPagi("ryan");
+      selamatMalam("wahyu");*/
+      
+      
+      //imadiately invoke function
+      let add = (function () {
+        let counter = 0;
+        return function () {
+          return ++counter;
+        }
+      })();
+      
+      console.log(add());
+      console.log(add());
+      console.log(add());
+    </script>
+  </body>
+</html>
