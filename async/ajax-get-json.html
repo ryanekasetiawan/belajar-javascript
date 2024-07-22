@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Get JSON</title>
+  </head>
+  <body>
+    <h3 id="header">User: </h3>
+    <div id="users">
+      
+    </div>
+    <h3 id="name"></h3>
+    <h3 id="email"></h3>
+    <table id="data-table" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data akan diisi di sini -->
+        </tbody>
+    </table>
+    
+    <script type="text/javascript" charset="utf-8">
+    
+      /*function displayResponse(json) {
+        const firstName  = document.getElementById("first_name");
+        const lastName = document.getElementById("last_name");
+        const email = document.getElementById("email");
+        firstName.textContent = "First name: ";
+        lastName.textContent = "Last name: ";
+        email.textContent = "E-mail: ";
+        firstName.textContent += json.data.first_name;
+        lastName.textContent += json.data.last_name;
+        email.textContent += json.data.email;
+      }
+      */
+      
+      //menampilkan semua data
+      /*
+      function displayResponse(json) {
+        const header = document.getElementById("header");
+
+        // Hapus konten sebelumnya
+        header.innerHTML = "";
+    
+        if (json.data) {
+          // Loop melalui semua properti dalam objek data
+          for (const key in json.data) {
+            if (json.data.hasOwnProperty(key)) {
+              const value = json.data[key];
+
+              // Membuat elemen div untuk setiap properti
+              const div = document.createElement("div");
+              div.textContent = `${key}: ${value}`;
+              
+              // Menambahkan elemen div ke header
+              header.appendChild(div);
+            }
+          }
+        } else {
+          header.textContent = json.response;
+        }
+      }
+      */
+      
+      /*
+      function updateElementText(elementId, label, text) {
+        const element = document.getElementById(elementId);
+        element.textContent = `${label} ${text}`;
+      }
+
+      function displayResponse(json) {
+        const { name, email } = json.data;
+
+        updateElementText("name", "Name:", name);
+        updateElementText("email", "E-mail:", email);
+      }
+      */
+      
+      function createUserElement(user) {
+      const userDiv = document.createElement("div");
+      userDiv.innerHTML = `Name: ${user.name} <br> E-mail: ${user.email}`;
+      return userDiv;
+    }
+    
+    //tampil dengan header
+    function displayResponse(json) {
+      const usersContainer = document.getElementById("users");
+      usersContainer.innerHTML = ""; // Clear any existing content
+
+      json.forEach(user => {
+        const userElement = createUserElement(user);
+        usersContainer.appendChild(userElement);
+      });
+    }
+      
+      const ajax = new XMLHttpRequest();
+      //ajax.addEventListener("readystatechange", callback);
+      ajax.onreadystatechange = function (){
+        console.info(`Ready state change ${ajax.readyState}`);
+      };
+      
+      //ajax.open("GET", "https://reqres.in/api/users/2");
+     ajax.open("GET", "https://669b7457276e45187d3587a4.mockapi.io/api/ajax/users");
+      
+      
+      //dengan tabel
+      document.addEventListener('DOMContentLoaded', () => {
+      fetch('https://669b7457276e45187d3587a4.mockapi.io/api/ajax/users')  // Ganti dengan URL file JSON Anda
+        .then(response => response.json())
+        .then(data => {
+          const filteredData = data.filter(item => item.name === 'ryan eka');
+          const tableBody = document.querySelector('#data-table tbody');
+          data.forEach(item => {
+              const row = document.createElement('tr');
+              const nameCell = document.createElement('td');
+              const emailCell = document.createElement('td');
+
+              nameCell.textContent = item.name;
+              emailCell.textContent = item.email;
+
+              row.appendChild(nameCell);
+              row.appendChild(emailCell);
+              tableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+      });
+      
+      
+      //tanpa tabel
+      /*
+      ajax.addEventListener("load", function () {
+          if (ajax.status == 200){
+            const json = JSON.parse(ajax.responseText);
+            displayResponse(json);
+            //console.log(displayResponse(json));
+          } else {
+            displayResponse({
+              response: `Terjadi kesalahan dengan status ${ajax.status}`
+            });
+          }
+      });
+      ajax.send();
+      */
+      
+    </script>
+  </body>
+</html>

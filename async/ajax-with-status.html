@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX with Status</title>
+  </head>
+  <body>
+    <h1 id="header"></h1>
+    <script type="text/javascript" charset="utf-8">
+    
+      function displayResponse(json) {
+        const header = document.getElementById("header");
+          header.textContent = json.response;
+      }
+      
+      const ajax = new XMLHttpRequest();
+      //ajax.addEventListener("readystatechange", callback);
+      ajax.onreadystatechange = function (){
+        console.info(`Ready state change ${ajax.readyState}`);
+      }
+      ajax.open("GET", "api/hello.json");
+      ajax.addEventListener("load", function () {
+          if (ajax.status == 200){
+            const json = JSON.parse(ajax.responseText);
+            displayResponse(json);
+          } else {
+            displayResponse({
+              response: `Terjadi kesalahan dengan status ${ajax.status}`
+            });
+          }
+      });
+      ajax.send();
+      
+    </script>
+  </body>
+</html>

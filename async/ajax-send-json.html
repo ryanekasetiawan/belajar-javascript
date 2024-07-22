@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Send JSON</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">username
+        <input type="text" name="username" id="username"/>
+      </label>
+      <br />
+      <label for="email">email
+        <input type="email" name="email" id="email"/>
+      </label>
+      <br />
+      <label for="password">password
+        <input type="password" name="password" id="password"/>
+      </label>
+      <br />
+      <input type="button" name="login" id="login" value="login"/>
+    </form>
+    <h1 id="response"></h1>
+  </body>
+  <script type="text/javascript" charset="utf-8">
+    
+    function doLogin() {
+      const ajax = new XMLHttpRequest();
+      //ajax.open("POST", "https://reqres.in/api/users");
+      ajax.open("POST", "https://669b7457276e45187d3587a4.mockapi.io/api/ajax/users");
+      ajax.onload = function () {
+        const response = document.getElementById("response");
+        response.innerText = ajax.responseText;
+      };
+      ajax.setRequestHeader("Content-Type", "application/json");
+      
+      const json = {
+        name: document.getElementById("username").value,
+        email: document.getElementById("email").value,
+        //password: document.getElementById("password").value
+      };
+      
+      ajax.send(JSON.stringify(json));
+    }
+    
+    document.getElementById("login").onclick = doLogin; 
+  </script>
+</html>
