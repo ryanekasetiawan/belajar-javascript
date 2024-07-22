@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      //const strDate;
+      
+      const date = new Date();
+      const stringDate = date.toString();
+      const localeString = date.toLocaleString();
+      const localeDateString = date.toLocaleDateString();
+      console.info(`Default : ${date}`);
+      console.info(`To string :  ${stringDate}`);
+      console.info(`To locale string : ${localeString}`);
+      console.info(`To locale date string : ${localeDateString}`);
+      
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const day = date.getDate();
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      const seconds = date.getSeconds();
+      let birthday = new Date('12-31-2001 22:10:35');
+      
+      console.info(`Tahun : ${year}`);
+      console.info(`Bulan : ${month}`);
+      console.info(`Hari : ${day}`);
+      console.info(`Jam : ${hours}`);
+      console.info(`Menit : ${minutes}`);
+      console.info(`Detik : ${seconds}`);
+      console.info(`Tgl lahir : ${birthday}`);
+      
+      birthday.setDate(25);
+      birthday.setMonth(10);
+      birthday.setFullYear(2005);
+      console.info(birthday.toString());
+      
+      let newBirthday = new Date(birthday);
+      newBirthday.setDate(30);
+      newBirthday.setMonth(0);
+      newBirthday.setFullYear(1990);
+      console.info(newBirthday.toString());
+      
+      {
+        // Membuat variabel fungsi untuk mengubah tanggal
+        let changeBirthday = (date, newDate, newMonth, newYear) => {
+            let updateBirthday = new Date(date);
+            let updateMonth = new Date(month);
+            let updateYear = new Date(year);
+            updateBirthday.setDate(newDate);
+            updateBirthday.setMonth(newMonth);
+            updateBirthday.setFullYear(newYear);
+            return updateBirthday;
+        };
+
+        // Menggunakan fungsi tersebut untuk mengubah tanggal
+        let newBirthday = changeBirthday(birthday, 30, 0, 1998);
+        
+        // Tampilkan hasilnya di console
+        console.log('Tanggal asli:', birthday.toString());
+        console.log('Tanggal yang diubah:', newBirthday.toString());
+      }
+    </script>
+  </body>
+</html>
