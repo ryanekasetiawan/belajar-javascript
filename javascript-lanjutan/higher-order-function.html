@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher order function</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      /*function kerjakanTugas(matakuliah, selesai) {
+        console.log(`Mulai mengerjakan tugas ${matakuliah}...`);
+        selesai();
+      }
+      
+      function selesai() {
+        alert("Selesai mengerjakan tugas");
+      }
+      
+      kerjakanTugas("Pemrograman Web", selesai);*/
+      
+      function repeat(n, action) {
+        for (let i = 1; i <= n; i++) {
+          action(i);
+        }
+      }
+      
+      repeat(5, console.log);
+      repeat(3, alert);
+    </script>
+  </body>
+</html>

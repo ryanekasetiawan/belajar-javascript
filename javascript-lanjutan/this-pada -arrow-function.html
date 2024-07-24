@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This pada arrow function</title>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      
+      // Constructor function
+      /*
+      const Mahasiswa = function () {
+        this.nama = "Ryan";
+        this.umur = 28;
+        this.sayHello = function () {
+          console.log(`Hello nama saya ${this.nama}, umur ${this.umur} tahun`);
+        }
+      };
+      const ryan = new Mahasiswa();*/
+      
+      
+      //arrow function
+      /*const Mahasiswa = function () {
+        this.nama = "Ryan";
+        this.umur = 28;
+        this.sayHello = () => {
+          console.log(`Hello nama saya ${this.nama}, umur ${this.umur} tahun`);
+        }
+      };
+      const ryan = new Mahasiswa();*/
+
+
+      //object literal
+      /*const mhs1 = {
+        nama: "Ryan",
+        umur: 28,
+        sayHello: () => {
+          //console.log(`Hello nama saya ${this.nama}, umur ${this.umur} tahun`);
+          console.log(this);
+        }
+      };*/
+      
+      const Mahasiswa = function () {
+        this.nama = "Ryan";
+        this.umur = 28;
+        this.sayHello = function () {
+          console.log(`Hello nama saya ${this.nama}, umur ${this.umur} tahun`);
+        }
+        
+        setInterval(() => {
+          console.log(this.umur++);
+        }, 500);
+      };
+    </script>
+  </body>
+</html>
