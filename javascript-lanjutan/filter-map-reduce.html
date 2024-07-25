@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filter, Map & Reduce</title>
+</head>
+
+<body>
+  <script type="text/javascript" charset="utf-8">
+  
+    const angka = [-1, 8, 9, 1, -4, -5, 3, 2, 9, 5];
+
+    //perulangan for
+    /*const newAngka = [];
+    for (i = 0; i < angka.length; i++) {
+      if (angka[i] >= 3) {
+        newAngka.push(angka[i]);
+      }
+    }
+    console.log(newAngka);
+    */
+    
+    
+    //filter
+    //menampilkan angka >= 3
+    //const newAngka = angka.filter(a => a >= 3);
+    //console.log(newAngka);
+    
+    
+    //map
+    //kalikan semua angka dengan 2
+   //const newAngka = angka.map(a => a * 2);
+   //console.log(newAngka);
+   
+   
+   
+   //reduce
+   //jumlahkan seluruh elemen pada array
+   //0 + -1 + 8 + 9 + 1 + -4 + -5 + 3 + 2 + 9 + 5
+   //const newAngka = angka.reduce((prev, cur) => prev + cur, 0);
+   //console.log(newAngka);
+   
+   
+   //Method Chaining
+   //Cari angka > 4
+   //Kalikan 3
+   //Jumlahkan
+   const hasil = angka.filter(a => a > 4)
+    .map(a => a *3)
+    .reduce((prev, cur) => prev + cur);
+    
+    console.log(hasil);
+    
+  </script>
+</body>
+
+</html>
